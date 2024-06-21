@@ -1,5 +1,5 @@
 'use client';
- 
+
 import { lusitana } from '@/app/ui/fonts';
 import {
   AtSymbolIcon,
@@ -7,16 +7,12 @@ import {
   ExclamationCircleIcon,
 } from '@heroicons/react/24/outline';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
-import { Button } from '@/app/ui/button';
-import { useActionState } from "react";
+import { useFormState } from 'react-dom';
 import { authenticate } from '@/app/lib/actions';
- 
+
 export default function LoginForm() {
-  const [errorMessage, formAction, isPending] = useActionState(
-    authenticate,
-    undefined,
-  );
- 
+  const [errorMessage, formAction] = useFormState(authenticate, undefined);
+
   return (
     <form action={formAction} className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
@@ -64,7 +60,7 @@ export default function LoginForm() {
             </div>
           </div>
         </div>
-        <button className="mt-4 w-full" aria-disabled={isPending}>
+        <button className="mt-4 w-full">
           Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
         </button>
         <div

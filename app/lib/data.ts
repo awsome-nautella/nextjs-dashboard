@@ -23,7 +23,7 @@ export async function fetchRevenue() {
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
-   //  console.log('Data fetch completed after 3 seconds.');
+    //  console.log('Data fetch completed after 3 seconds.');
 
     return data.rows;
   } catch (error) {
@@ -33,7 +33,7 @@ export async function fetchRevenue() {
 }
 
 export async function fetchLatestInvoices() {
-  noStore(); 
+  noStore();
   try {
     const data = await sql<LatestInvoiceRaw>`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id

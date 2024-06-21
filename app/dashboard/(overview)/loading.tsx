@@ -1,8 +1,6 @@
-import { lato } from "../../ui/fonts";
-import DashboardSkeleton from "../../ui/skeletons";
+import { lato } from '../../ui/fonts';
+import DashboardSkeleton from '../../ui/skeletons';
 
-    export default function Loading(){
-        return(
-            <DashboardSkeleton></DashboardSkeleton>
-        )
-    }
+export default function Loading() {
+  return <DashboardSkeleton></DashboardSkeleton>;
+}
